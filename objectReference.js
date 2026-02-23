@@ -21,9 +21,10 @@ let obj1 = {
   role : "admin",
 }
 
+let obj2 = {};
 Object.assign(obj2, obj1)
 
-let obj2 = obj1
+obj2 = obj1
 
 console.log(obj1===obj2) // true since obj2 copied reference of obj1 (not a copy of values)
 // meaning that they effectivley refer to the same "thing"

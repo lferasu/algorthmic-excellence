@@ -5,7 +5,7 @@ const user  = {
     },
     interests : ["soccer", "biking", "reading"],
     speak(){
-        console.log(`myname is ${this.name} and my interests are ${interests}`)
+        console.log(`myname is ${this.name} and my interests are ${this.interests.join(", ")}`)
     }
 }
 

@@ -46,12 +46,11 @@ function reverseInteger(int) {
     return reversed
 }
 
-isValid = function (s) {
+const isValid = function (s) {
   const startTime = new Date()
     if (s.length % 2 !== 0)
     {
         const endTime = new Date()
-        const diff = endTime-startTime;
         console.log(endTime - startTime)
         return false;
     }
@@ -67,9 +66,8 @@ isValid = function (s) {
         s = s.substring(1)
     }
     const endTime = new Date()
-    const diff = endTime-startTime;
     console.log(endTime - startTime)
-    return stack.lenght === 0
+    return stack.length === 0
 
 };
 

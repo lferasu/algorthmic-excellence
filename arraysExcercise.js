@@ -7,7 +7,14 @@ function camelize(str) {
 function filterRange(arr, a, b) {
     return arr.filter(elem => elem >= a && elem <= b)
 }
-const filterRangeInPlace = (arr, a, b) => arr.forEach((elem, index) => (elem <= a || elem >= b) && arr.splice(index, 1))
+const filterRangeInPlace = (arr, a, b) => {
+    for (let i = arr.length - 1; i >= 0; i--) {
+        if (arr[i] < a || arr[i] > b) {
+            arr.splice(i, 1);
+        }
+    }
+    return arr
+}
 const sortDesc = (arr => arr.sort((a, b) => b - a))
 function _filterRangeInPlace(arr, a, b) {
     for (let i = 0; i < arr.length; i++) {
@@ -30,9 +37,9 @@ function Calculator() {
     };
     this.calculate = function (str) {
         const exp = str.split(' ');
-        a = exp[0];
-        b = exp[2];
-        operator = exp[1];
+        const a = exp[0];
+        const b = exp[2];
+        const operator = exp[1];
 
         return this.operationFunc[operator](a, b)
     }
@@ -57,7 +64,7 @@ let mary = { name: "Mary", age: 28 };
 
 let users = [john, pete, mary];
 
-names = users.map(elem => elem.name);
+const names = users.map(elem => elem.name);
 console.log(names)
 
 let john1 = { name: "John", surname: "Smith", id: 1 };
@@ -105,7 +112,7 @@ let users3 = [
     {id: 'pete', name: "Pete Peterson", age: 31},
   ];
   
-  const sum = users.reduce((obj,elem)=>{
+  const sum = users3.reduce((obj,elem)=>{
     obj[elem.name]= elem
     return obj
   },{})
