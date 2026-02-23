@@ -35,11 +35,11 @@ let structuredObject = {
     f :  ()=>console.log("hello")
   }
 
-   // can not be structured clone because it has function in it
-  const clonedFunctionObject = structuredClone(functionObject)
+  // can not be structured cloned because it has a function in it
+  // use a shallow copy for demonstration instead
+  const clonedFunctionObject = { ...functionObject }
   out(clonedFunctionObject)
 
 function out () {
   Object.values(arguments).forEach(elem=>console.log(elem))
 }
-

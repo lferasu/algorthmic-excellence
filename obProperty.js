@@ -4,7 +4,7 @@
 let fruit = "apple";
 let another = 'orange'
 
-bag = {
+const bag = {
     [fruit] :  5,
 }
 

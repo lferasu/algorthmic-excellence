@@ -5,7 +5,7 @@ const User = function(name){
 }
 
 User.prototype.getName = function() {
-    return this.userName
+    return this.name
 }
 
 console.log(new User('hello'))
